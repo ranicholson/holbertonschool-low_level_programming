@@ -7,4 +7,6 @@
  * Return: No return on a header.
  */
 
-int _putchar(char c)
+int _putchar(char c);
+
+#endif
