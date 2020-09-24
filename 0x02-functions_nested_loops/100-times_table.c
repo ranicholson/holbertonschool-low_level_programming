@@ -1,7 +1,8 @@
 #include "holberton.h"
 
 /**
- * times_table - function to print times table
+ * print_times_table - function to print times table
+ * @n: number to use in times table
  */
 
 void print_times_table(int n)
@@ -20,6 +21,7 @@ void print_times_table(int n)
 			for (y = 1; y <= n; y++)
 			{
 				int z = x * y;
+
 				_putchar(',');
 				_putchar(' ');
 
