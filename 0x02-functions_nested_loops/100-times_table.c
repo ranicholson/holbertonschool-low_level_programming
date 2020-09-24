@@ -11,7 +11,7 @@ void print_times_table(int n)
 	int y;
 
 	if (n > 15 || n < 0)
-		_putchar('\n');
+		;
 
 	else
 	{
