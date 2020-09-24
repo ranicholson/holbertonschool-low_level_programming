@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * main - Determine if a something is upp er lower case.
- * _isupper - determine if something is upp er olower case
- * @c: letter to determine case of
+ * _isdigit - Determine if a something is upp er lower case.
+ * _isdigit - determine if something is upp er olower case
+ * @c: input to bbe tested
  * Return: 1 for uppercase and 0 for lowercase
  */
 
