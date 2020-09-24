@@ -4,6 +4,7 @@
 /**
  * main- Header file
  * description: Linking functions to other files
+ * @c: could be anything i suppose
  * Return: No return on a header.
  */
 
