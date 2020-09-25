@@ -3,7 +3,7 @@
 /**
  * print_triangle - draw a nice triangle
  *@size: How long the line should be
- * 
+ *
  */
 
 void print_triangle(int size)
