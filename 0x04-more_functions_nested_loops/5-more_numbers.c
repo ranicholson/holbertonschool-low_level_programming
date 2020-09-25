@@ -13,9 +13,11 @@ void more_numbers(void)
 
 	for (y = 0; y <= 9; y++)
 	{
-		for (x = 0; x <= 9; x++)
+		for (x = 0; x <= 14; x++)
 		{
-			_putchar(x + '0');
+			if (x > 9)
+				_putchar((x / 10) + '0');
+			_putchar((x % 10) + '0');
 		}
 		_putchar('\n');
 	}
