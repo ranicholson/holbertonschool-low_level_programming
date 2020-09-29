@@ -5,8 +5,10 @@
  * main- Header file
  * description: Linking functions to other files
  * Return: No return on a header.
+ * @c: betty demands a description
  */
 
+int _putchar(char c);
 void reset_to_98(int *n);
 void swap_int(int *a, int *b);
 int _strlen(char *s);
