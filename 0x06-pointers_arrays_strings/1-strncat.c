@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * *_strcat - using it to concatenate stuff
+ * *_strncat - using it to concatenate stuff
  * @dest: destination to add on a string
  * @src: string to be added on
  * @n: maximum number of bytes to use
