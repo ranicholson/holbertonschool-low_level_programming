@@ -1,9 +1,8 @@
 #include "holberton.h"
 
 /**
- *
- *
- *
+ * print_number - trying to print an integer
+ * @n: integer to print
  *
  */
 
