@@ -20,6 +20,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 		else
 		dest[x] = src[x];
 	}
+	dest[x] = '\0';
 
 	return (dest);
 }
