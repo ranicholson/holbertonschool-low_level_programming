@@ -11,7 +11,6 @@ unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int x;
 	unsigned int y;
-	unsigned int z;
 
 	for (x = 0; s[x]; x++)
 	{
@@ -19,7 +18,6 @@ unsigned int _strspn(char *s, char *accept)
 		{
 			if (s[x] == accept[y])
 			{
-				z++;
 				break;
 			}
 		}
@@ -28,5 +26,5 @@ unsigned int _strspn(char *s, char *accept)
 			break;
 	}
 
-	return (z);
+	return (x);
 }
