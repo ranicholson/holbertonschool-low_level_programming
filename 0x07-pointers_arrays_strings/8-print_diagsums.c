@@ -11,24 +11,18 @@
 void print_diagsums(int *a, int size)
 {
 	int x;
-	int y;
 	int z = 0;
 	int b = 0;
 
-	for (x = 0; x <= size; x++)
+	for (x = 0; x < (size * size); x++ )
 	{
-		for (y = 0; y <= size; y++)
-		{
-			if (x == y)
-			{
-				z += a[x][y];
-			}
+		z += a[x];
+		x = x + size;
+	}
 
-			if ((x + y) == size)
-			{
-				b += a[x][y];
-			}
-		}
+	for (x = size - 1; x < (size * size - 1); x += size - 1)
+	{
+		b += a[x];
 	}
 
 	printf("%d, %d\n", z, b);
