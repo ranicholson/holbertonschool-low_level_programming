@@ -10,16 +10,17 @@
 char *_strstr(char *haystack, char *needle)
 {
 	unsigned int x;
-	unsigned int y = 0;
+	unsigned int y;
 
 	for (x = 0; haystack[x]; x++)
 	{
-		if (haystack[x] == needle[y])
+		for (y = 0; needle[y] != '\0'; y++)
 		{
-			y++;
+			if (haystack[x+y] != needle[y])
+			    break;
 		}
-		if (needle[y + 1] == '\0')
-			return (haystack + (x - y + 1));
+		if (needle[y] == '\0')
+			return (haystack + x);
 	}
 
 	return ('\0');
