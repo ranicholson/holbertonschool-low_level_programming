@@ -18,7 +18,7 @@ int sqrt_assist(int n, int x)
 	if (n < 0)
 		return (-1);
 
-	return sqrt_assist( n, (x + 1));
+	return (sqrt_assist(n, (x + 1)));
 }
 
 /**
