@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - add postive numbers
@@ -12,6 +13,7 @@ int main(int argc, char *argv[])
 {
 	int x;
 	int y;
+	int z;
 
 	if (argc == 1)
 	{
@@ -20,14 +22,14 @@ int main(int argc, char *argv[])
 	}
 	for (x = 1; x < argc; x++)
 	{
-
-		if ((!atoi(argv[x]) && *argv[x] != '0') || atoi(argv[x]) < 0)
+		for (z = 0; argv[x][z] != '\0'; z++)
 		{
-			printf("Error\n");
-			return (1);
-
+			if (!isdigit(argv[x][z]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-
 		y += atoi(argv[x]);
 	}
 
