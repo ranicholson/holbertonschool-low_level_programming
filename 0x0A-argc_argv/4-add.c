@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	for (x = 1; x < argc; x++)
 	{
 
-		if (!atoi(argv[x]) && *argv[x] != '0')
+		if ((!atoi(argv[x]) && *argv[x] != '0') || atoi(argv[x]) < 0)
 		{
 			printf("Error\n");
 			return (1);
