@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <ctype.h>
 #include <stdlib.h>
 
 /**
@@ -17,9 +16,14 @@ int main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		y = atoi(argv[1]);
+		if (y < 0)
+		{
+			printf("0\n");
+			return (1);
+		}
 		while (y != 0)
 		{
-			if (y >= 25)
+			if (y % 25 == 0)
 			{
 				y -= 25;
 				x++;
