@@ -4,8 +4,8 @@
 
 /**
  * main - trying to figure out coins for change
- * @argc - length of string
- * @argv - amount to give change for
+ * @argc: length of string
+ * @argv: amount to give change for
  * Return: 0 for success and 1 for ultimate failure
  */
 
