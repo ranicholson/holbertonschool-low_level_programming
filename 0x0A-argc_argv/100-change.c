@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		if (y < 0)
 		{
 			printf("0\n");
-			return (1);
+			return (0);
 		}
 		while (y != 0)
 		{
