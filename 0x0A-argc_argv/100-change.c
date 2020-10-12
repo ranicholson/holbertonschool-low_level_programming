@@ -16,14 +16,12 @@ int main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		y = atoi(argv[1]);
-		if (y <= 0)
-		{
-			printf("0\n");
-			return (0);
-		}
 		while (y != 0)
 		{
-			if (y % 25 == 0)
+			if (y < 0)
+				break;
+
+			else if (y % 25 == 0)
 			{
 				y -= 25;
 				x++;
