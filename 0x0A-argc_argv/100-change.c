@@ -1,17 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
  * main - trying to figure out coins for change
  * @argc: length of string
  * @argv: amount to give change for
  * Return: 0 for success and 1 for ultimate failure
  */
-
 int main(int argc, char *argv[])
 {
-	int x;
-	int y;
+	int x, int y;
 
 	if (argc == 2)
 	{
