@@ -18,10 +18,7 @@ int main(int argc, char *argv[])
 		y = atoi(argv[1]);
 		while (y != 0)
 		{
-			if (y < 0)
-				break;
-
-			else if (y % 25 == 0)
+			if (y % 25 == 0)
 			{
 				y -= 25;
 				x++;
