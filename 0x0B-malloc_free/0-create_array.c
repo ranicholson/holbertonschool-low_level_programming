@@ -6,8 +6,8 @@
  * *create_array - function to create array of characters
  * @size: size of array
  * @c: contents of string
- * Return: Null if the size is 0 or if it fails, and a pointer to the array upon
- * success
+ * Return: Null if the size is 0 or if it fails, and a pointer
+ * to the array upon success
  */
 
 char *create_array(unsigned int size, char c)
