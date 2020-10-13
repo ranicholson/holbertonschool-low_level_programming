@@ -19,28 +19,23 @@ int main(int argc, char *argv[])
 				break;
 			else if (y >= 25)
 			{
-				y -= 25;
-				x++;
+				y -= 25, x++;
 			}
 			else if (y >= 10)
 			{
-				y -= 10;
-				x++;
+				y -= 10, x++;
 			}
 			else if (y >= 5)
 			{
-				y -= 5;
-				x++;
+				y -= 5, x++;
 			}
 			else if (y >= 2)
 			{
-				y -= 2;
-				x++;
+				y -= 2, x++;
 			}
 			else  if (y >= 1)
 			{
-				y -= 1;
-				x++;
+				y -= 1, x++;
 			}
 		}
 	}
