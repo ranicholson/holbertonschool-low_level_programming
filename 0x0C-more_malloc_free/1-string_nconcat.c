@@ -53,7 +53,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (b = 0; b < y; b++)
 		conc[b + a] = s2[b];
 
-	conc[b + a + 1] = '\0';
+	conc[b + a] = '\0';
 
 	return (conc);
 }
