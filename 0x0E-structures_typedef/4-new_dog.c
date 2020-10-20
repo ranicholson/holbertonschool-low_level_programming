@@ -47,7 +47,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	na[z] = '\0';
 
 	for (a = 0; a < y; a++)
-		ow[a] = owner[y];
+		ow[a] = owner[a];
 	ow[a] = '\0';
 
 	ndog->name = na;
