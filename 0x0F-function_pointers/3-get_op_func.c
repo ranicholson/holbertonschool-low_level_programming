@@ -10,21 +10,23 @@
 
 int (*get_op_func(char *s))(int, int)
 {
-	int i;
+	int i = 0;
 	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
 		{"*", op_mul},
 		{"/", op_div},
 		{"%", op_mod},
-		{NULL, NULL)
+		{NULL, NULL}
 	};
 
 	while (i < 6)
 	{
-		if (op_t->ops[i] == s)
-			return (op_t->ops[i]);
+		if (ops[i] == s[0])
+			return (ops[i].f);
 
 		i++;
 	}
+
+	return (NULL);
 }
