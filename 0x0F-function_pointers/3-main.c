@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	if (math == NULL)
 	{
 		printf("Error\n");
-		return (100);
+		return (99);
 	}
 
 	y = atoi(argv[3]);
