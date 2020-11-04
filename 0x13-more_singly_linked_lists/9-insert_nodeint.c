@@ -1,7 +1,5 @@
 #include "lists.h"
 
-#include "lists.h"
-
 /**
  * get_nodeint_at_index - function that returns the nth node of a linked list
  * @head: list to get node from
@@ -39,6 +37,9 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *nnode, *tmp;
+
+	if (head == NULL)
+		return (NULL);
 
 	nnode = malloc(sizeof(listint_t));
 
