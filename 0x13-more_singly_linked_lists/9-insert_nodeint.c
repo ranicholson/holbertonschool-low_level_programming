@@ -49,7 +49,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	{
 		nnode->next = *head;
 		*head = nnode;
-		return (*head);
+		return (nnode);
 	}
 
 	tmp = get_nodeint_at_index(*head, (idx - 1));
@@ -64,5 +64,5 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	nnode->next = tmp->next;
 	tmp->next = nnode;
 
-	return (*head);
+	return (nnode);
 }
