@@ -42,11 +42,15 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	nnode = malloc(sizeof(listint_t));
 
-	if (head == NULL)
-		return (NULL);
-
 	if (nnode == NULL)
 		return (NULL);
+
+	if (idx == 0)
+	{
+		nnode->next = *head;
+		*head = nnode;
+		return (*head);
+	}
 
 	tmp = get_nodeint_at_index(*head, (idx - 1));
 
