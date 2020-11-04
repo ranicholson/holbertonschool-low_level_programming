@@ -64,7 +64,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	else
 	{
-		tmp->next = tmp2->next;\
+		tmp->next = tmp2->next;
 		free(tmp2);
 		return (1);
 	}
