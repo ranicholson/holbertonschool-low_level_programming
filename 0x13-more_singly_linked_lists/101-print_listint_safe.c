@@ -8,11 +8,13 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	unsigned int count = 0;
-	const listint_t *j = head;
+	size_t count = 0;
+	const listint_t *j = NULL;
 
 	if (head == NULL)
 		exit(98);
+
+	j = head;
 
 	while (j)
 	{
@@ -24,5 +26,5 @@ size_t print_listint_safe(const listint_t *head)
 		count++;
 	}
 
-	return (count + 1);
+	return (count);
 }
