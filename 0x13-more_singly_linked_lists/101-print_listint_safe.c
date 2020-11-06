@@ -12,7 +12,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *j = head;
 
 	if (head == NULL)
-		return (count);
+		exit (98);
 
 	while (j)
 	{
