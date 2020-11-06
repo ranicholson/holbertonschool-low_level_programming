@@ -17,7 +17,7 @@ size_t print_listint_safe(const listint_t *head)
 	while (j)
 	{
 		if (j == head->next->next && count > 3)
-			return (count);
+			exit (98);
 
 		printf("[%p] %d\n", (void *)j, j->n);
 		j = j->next;
