@@ -1,6 +1,8 @@
 #include "holberton.h"
 
 void close_friend(int fd);
+void rerr(char *arg);
+void werr(char *arg);
 
 /**
  * main - function to copy one file to another
@@ -16,37 +18,32 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	oporg = open(argv[1], O_RDONLY);
 	if (oporg == -1)
-	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+		rerr(argv[1]);
+
 	opcpy = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (opcpy == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		close_friend(oporg);
-		exit(99);
+		werr(argv[2]);
 	}
 	re = read(oporg, buffy, 1024);
 	if (re == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		close_friend(oporg);
 		close_friend(opcpy);
-		exit(98);
+		rerr(argv[1]);
 	}
 	wr = write(opcpy, buffy, re);
 	if (wr == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		close_friend(oporg);
 		close_friend(opcpy);
-		exit(99);
+		werr(argv[2]);
 	}
 	close_friend(oporg);
 	close_friend(opcpy);
@@ -70,4 +67,26 @@ void close_friend(int fd)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
+}
+/**
+ * rerr - function ro handle read error
+ * @arg: file that cannot be read
+ */
+
+void rerr(char *arg)
+{
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg);
+	exit(98);
+}
+
+/**
+ * werr - function to handle write error
+ * @arg: file that cannot be written to
+ */
+
+
+void werr(char *arg)
+{
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", arg);
+	exit(99);
 }
