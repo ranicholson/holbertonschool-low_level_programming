@@ -14,7 +14,7 @@ void werr(char *arg);
 int main(int argc, char *argv[])
 {
 	char *buffy;
-	int oporg, opcpy, wr, re = 1024;
+	int oporg, opcpy, wr, re;
 
 	if (argc != 3)
 	{
@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
 	buffy = malloc(1024);
 	if (buffy == NULL)
 	rerr(argv[1]);
+	re = read(oporg, buffy, 1024);
 	while (re == 1024)
 	{
 		re = read(oporg, buffy, 1024);
@@ -53,6 +54,9 @@ int main(int argc, char *argv[])
 			werr(argv[2]);
 		}
 	}
+	wr = write(opcpy, buffy, re);
+	if (wr != re)
+		werr(argv[2]);
 	close_friend(oporg);
 	close_friend(opcpy);
 	free(buffy);
