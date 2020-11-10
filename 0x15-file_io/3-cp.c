@@ -21,6 +21,8 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
+	if (argv[2] == NULL)
+		werr(argv[2]);
 	oporg = open(argv[1], O_RDONLY);
 	if (oporg == -1)
 		rerr(argv[1]);
