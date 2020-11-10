@@ -21,8 +21,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	if (argv[1] == NULL)
-		rerr(argv[1]);
 	oporg = open(argv[1], O_RDONLY);
 	if (oporg == -1)
 		rerr(argv[1]);
@@ -43,7 +41,7 @@ int main(int argc, char *argv[])
 			rerr(argv[1]);
 		}
 		wr = write(opcpy, buffy, re);
-		if (wr == -1)
+		if (wr == -1 || wr != re)
 		{
 			close_friend(oporg);
 			close_friend(opcpy);
