@@ -3,6 +3,7 @@
 void close_friend(int fd);
 void rerr(char *arg);
 void werr(char *arg);
+char buff_friend(char *buff);
 
 /**
  * main - function to copy one file to another
@@ -31,19 +32,22 @@ int main(int argc, char *argv[])
 		close_friend(oporg);
 		werr(argv[2]);
 	}
-	re = read(oporg, buffy, 1024);
-	if (re == -1)
+	while (re > 0)
 	{
-		close_friend(oporg);
-		close_friend(opcpy);
-		rerr(argv[1]);
-	}
-	wr = write(opcpy, buffy, re);
-	if (wr == -1)
-	{
-		close_friend(oporg);
-		close_friend(opcpy);
-		werr(argv[2]);
+		re = read(oporg, buffy, 1024);
+		if (re == -1)
+		{
+			close_friend(oporg);
+			close_friend(opcpy);
+			rerr(argv[1]);
+		}
+		wr = write(opcpy, buffy, re);
+		if (wr == -1)
+		{
+			close_friend(oporg);
+			close_friend(opcpy);
+			werr(argv[2]);
+		}
 	}
 	close_friend(oporg);
 	close_friend(opcpy);
