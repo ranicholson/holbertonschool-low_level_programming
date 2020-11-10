@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
 	while (re == 1024)
 	{
 		re = read(oporg, buffy, 1024);
-		printf("%d\n", re);
 		if (re == -1)
 		{
 			free(buffy);
