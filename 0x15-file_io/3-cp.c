@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-int close_friend(int fd);
+void close_friend(int fd);
 
 /**
  * main - function to copy one file to another
@@ -12,7 +12,7 @@ int close_friend(int fd);
 int main(int argc, char *argv[])
 {
 	char buffy[1024];
-	int oporg, opcpy, wr, re, clf;
+	int oporg, opcpy, wr, re;
 
 	if (argc != 3)
 	{
