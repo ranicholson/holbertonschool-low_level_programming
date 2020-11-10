@@ -32,7 +32,8 @@ int main(int argc, char *argv[])
 		werr(argv[2]);
 	}
 	buffy = buff_friend(argv[1]);
-	while (re > 0)
+	re = read(oporg, buffy, 2014);
+	while (re != 0)
 	{
 		re = read(oporg, buffy, 1024);
 		if (re == -1)
