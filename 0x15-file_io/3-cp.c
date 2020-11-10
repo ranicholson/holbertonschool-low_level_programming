@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	rerr(argv[1]);
 	re = read(oporg, buffy, 1024);
 	if (re == -1)
-		rerr(argv[1];
+		rerr(argv[1]);
 	while (re == 1024)
 	{
 		re = read(oporg, buffy, 1024);
