@@ -48,11 +48,8 @@ int main(int argc, char *argv[])
 		close_friend(opcpy);
 		exit(99);
 	}
-	clf = close_friend(oporg);
-	clf += close_friend(opcpy);
-
-	if (clf < 0)
-		exit(100);
+	close_friend(oporg);
+	close_friend(opcpy);
 
 	return (0);
 }
@@ -60,17 +57,17 @@ int main(int argc, char *argv[])
 /**
  * close_friend - function to handle closing field discriptors
  * @fd: field discriptor to close
- * Return: 0 for success and -1 on fail
- */
+  */
 
-int close_friend(int fd)
+void close_friend(int fd)
 {
 	int x;
 
 	x = close(fd);
 
 	if (x == -1)
+	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-
-	return (x);
+		exit(100);
+	}
 }
