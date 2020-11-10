@@ -3,7 +3,6 @@
 void close_friend(int fd);
 void rerr(char *arg);
 void werr(char *arg);
-char buff_friend(char *buff);
 
 /**
  * main - function to copy one file to another
@@ -15,7 +14,7 @@ char buff_friend(char *buff);
 int main(int argc, char *argv[])
 {
 	char buffy[1024];
-	int oporg, opcpy, wr, re;
+	int oporg, opcpy, wr, re = 1;
 
 	if (argc != 3)
 	{
