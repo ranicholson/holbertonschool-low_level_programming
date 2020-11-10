@@ -22,20 +22,20 @@ int main(int argc, char *argv[])
 	oporg = open(argv[1], O_RDONLY);
 	if (oporg == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[2]);
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	opcpy = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (opcpy == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", argv[3]);
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		close_friend(oporg);
 		exit(99);
 	}
 	re = read(oporg, buffy, 1024);
 	if (re == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[2]);
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		close_friend(oporg);
 		close_friend(opcpy);
 		exit(98);
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	wr = write(opcpy, buffy, re);
 	if (wr == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", argv[3]);
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		close_friend(oporg);
 		close_friend(opcpy);
 		exit(99);
