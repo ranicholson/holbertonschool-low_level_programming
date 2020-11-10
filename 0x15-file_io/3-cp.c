@@ -13,7 +13,7 @@ void werr(char *arg);
 
 int main(int argc, char *argv[])
 {
-	char buffy[1024];
+	char buffer[1024];
 	int oporg, opcpy, wr, re = 1;
 
 	if (argc != 3)
@@ -33,14 +33,14 @@ int main(int argc, char *argv[])
 	}
 	while (re > 0)
 	{
-		re = read(oporg, buffy, 1024);
+		re = read(oporg, buffer, 1024);
 		if (re == -1)
 		{
 			close_friend(oporg);
 			close_friend(opcpy);
 			rerr(argv[1]);
 		}
-		wr = write(opcpy, buffy, re);
+		wr = write(opcpy, buffer, re);
 		if (wr != re)
 		{
 			close_friend(oporg);
