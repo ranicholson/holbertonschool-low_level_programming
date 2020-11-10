@@ -3,7 +3,6 @@
 void close_friend(int fd);
 void rerr(char *arg);
 void werr(char *arg);
-char *buff_friend(char *arg);
 
 /**
  * main - function to copy one file to another
@@ -31,7 +30,9 @@ int main(int argc, char *argv[])
 		close_friend(oporg);
 		werr(argv[2]);
 	}
-	buffy = buff_friend(argv[1]);
+	buffy = malloc(1024);
+	if (buffy == NULL)
+	rerr(argv[1]);
 	while (re > 0)
 	{
 		re = read(oporg, buffy, 1024);
@@ -95,22 +96,4 @@ void werr(char *arg)
 {
 	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", arg);
 	exit(99);
-}
-
-/**
- * buff_friend - function to make a buffer
- * @buff: pointer to malloc memory for
-4 * Return: pointer to buffer
- */
-
-char *buff_friend(char *arg)
-{
-	char *buffy;
-
-	buffy = malloc(sizeof(char) * 1024);
-
-	if (buffy == NULL)
-		rerr(arg);
-
-	return (buffy);
 }
