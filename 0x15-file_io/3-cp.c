@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 			rerr(argv[1]);
 		}
 		wr = write(opcpy, buffy, re);
-		if (wr == -1 || wr != re)
+		if (wr != re)
 		{
 			close_friend(oporg);
 			close_friend(opcpy);
