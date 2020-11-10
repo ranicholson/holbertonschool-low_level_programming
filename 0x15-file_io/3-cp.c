@@ -38,14 +38,6 @@ int main(int argc, char *argv[])
 		rerr(argv[1]);
 	while (re == 1024)
 	{
-		re = read(oporg, buffy, 1024);
-		if (re == -1)
-		{
-			free(buffy);
-			close_friend(oporg);
-			close_friend(opcpy);
-			rerr(argv[1]);
-		}
 		wr = write(opcpy, buffy, re);
 		if (wr != re)
 		{
@@ -53,6 +45,14 @@ int main(int argc, char *argv[])
 			close_friend(oporg);
 			close_friend(opcpy);
 			werr(argv[2]);
+		}
+		re = read(oporg, buffy, 1024);
+		if (re == -1)
+		{
+			free(buffy);
+			close_friend(oporg);
+			close_friend(opcpy);
+			rerr(argv[1]);
 		}
 	}
 	wr = write(opcpy, buffy, re);
