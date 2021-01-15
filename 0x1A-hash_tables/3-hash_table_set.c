@@ -12,27 +12,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *nhnod = NULL, *thnod = NULL;
 	unsigned long int idx;
-	char *tval = NULL, *tkey = NULL;
+	char *tval = NULL;
 
 	if (ht == NULL || key == NULL || value == NULL)
 		return (0);
 	tval = strdup(value);
 	if (tval == NULL)
 		return (0);
-	tkey = strdup(key);
-	if (tkey == NULL)
-	{
-		free(tval);
-		return (0);
-	}
 	nhnod = malloc(sizeof(hash_node_t));
 	if (nhnod == NULL)
 	{
 		free(tval);
-		free(tkey);
 		return (0);
 	}
-	nhnod->key = tkey;
+	nhnod->key = strdup(key);
 	nhnod->value = tval;
 	nhnod->next = NULL;
 	idx = key_index((unsigned char *)key, ht->size);
