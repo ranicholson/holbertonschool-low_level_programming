@@ -17,8 +17,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht == NULL || key == NULL || value == NULL)
 		return (0);
 	tval = strdup(value);
-	if (tval == NULL)
-		return (0);
 	nhnod = malloc(sizeof(hash_node_t));
 	if (nhnod == NULL)
 	{
@@ -38,6 +36,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			{
 				free(ht->array[idx]->value);
 				ht->array[idx]->value = tval;
+				free(nhnod->key);
 				free(nhnod);
 				return (1);
 			}
