@@ -1,6 +1,6 @@
-0x1A. C - Hash tables
+#0x1A. C - Hash tables
 
-I like my tables like I like mt corned beef. Hashed.
+I like my tables like I like m corned beef. Hashed.
 
 ## How can you practice this same project?
 
