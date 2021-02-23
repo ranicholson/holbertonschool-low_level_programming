@@ -17,4 +17,5 @@ oclean:
 
 fclean: clean oclean
 
-re: fclean all
+re:
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c
